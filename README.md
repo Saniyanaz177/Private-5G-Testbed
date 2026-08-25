@@ -52,10 +52,12 @@ sudo apt update
 sudo apt install -y gnupg
 
 curl -fsSL https://pgp.mongodb.com/server-8.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
+
 echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
 
 sudo apt update
 sudo apt install -y mongodb-org
+
 sudo systemctl start mongod
 sudo systemctl enable mongod
 sudo systemctl status mongod
@@ -85,9 +87,7 @@ sudo apt update
 sudo apt install -y nodejs
 
 curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -
-
 WebUI Access
-
 URL: http://localhost:9999
 Username: admin
 Password: <YOUR_WEBUI_PASSWORD>
@@ -110,11 +110,17 @@ libfftw3-dev libmbedtls-dev libsctp-dev \
 libyaml-cpp-dev libgtest-dev libuhd-dev uhd-host
 
 git clone https://github.com/srsRAN/srsRAN_Project.git
+
 cd srsRAN_Project
+
 mkdir build && cd build
+
 cmake ../
+
 make -j $(nproc)
+
 make test -j $(nproc)
+
 sudo make install
 6️⃣ USRP B210 Setup
 sudo apt install -y libuhd-dev uhd-host
@@ -215,8 +221,3 @@ Open-Cells UICC Tools
 📄 License
 
 This project is intended for educational and research purposes only. Users are responsible for ensuring regulatory compliance.
-
-
-**That's the entire README.** Your GitHub page will automatically turn the Markdown into the formatted version.
-
-I have **not included** the GitHub-generated sections like `Skip to content`, `Stars`, `Forks`, `Contrib
